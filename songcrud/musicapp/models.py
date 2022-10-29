@@ -7,6 +7,12 @@ class Artiste(models.Model):
 	last_name = models.CharField(max_length=20)
 	age = models.IntegerField()
 
+	#specifying the tag for the artiste model.
+	#The "first_name" assigned to the input will 
+	#serve as the title for the entry.
+	def __str__(self):
+		return self.first_name
+
 class Song(models.Model):
 	title = models.CharField(max_length=30)
 	date_released = models.DateField()
