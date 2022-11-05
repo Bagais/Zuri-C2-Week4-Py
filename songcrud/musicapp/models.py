@@ -28,5 +28,5 @@ class Lyric(models.Model):
 	song_id = models.ForeignKey(Song, on_delete = models.CASCADE)
 
 	def __str__(self):
-		return self.content
+		return str(self.song_id)
 
