@@ -6,9 +6,11 @@ class Artiste(models.Model):
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=20)
 	age = models.IntegerField()
+	# id = models.BigAutoField(primary_key=True)
+
 
 	#specifying the tag for the artiste model.
-	#The "first_name" assigned to the input will 
+	#The value of "first_name" will 
 	#serve as the title for the entry.
 	def __str__(self):
 		return self.first_name
@@ -18,6 +20,8 @@ class Song(models.Model):
 	date_released = models.DateField()
 	likes = models.IntegerField()
 	artiste_id = models.ForeignKey(Artiste, on_delete = models.CASCADE)
+	# id = models.BigAutoField(primary_key=True)
+
 
 	def __str__(self):
 		return self.title
@@ -26,6 +30,8 @@ class Song(models.Model):
 class Lyric(models.Model):
 	content = models.CharField(max_length=10000)
 	song_id = models.ForeignKey(Song, on_delete = models.CASCADE)
+	# id = models.BigAutoField(primary_key=True)
+
 
 	def __str__(self):
 		return str(self.song_id)
