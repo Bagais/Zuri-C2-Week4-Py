@@ -15,12 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-from musicapp import views
 
 urlpatterns = [
     path('musicapp/', include('musicapp.urls')),
     path('admin/', admin.site.urls),
-    path('view/', views.artistes_list),
-    path('api-auth/', include('rest_framework.urls')),  #default Django API to help browse API 
-
 ]
