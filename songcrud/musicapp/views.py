@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from .models import Artiste, Song, Lyric
+from rest_framework import viewsets
+
 from .serializers import ArtisteSerializer, SongSerializer, LyricSerializer
 from django.http import HttpResponse
 from django.http import JsonResponse

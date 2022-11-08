@@ -10,7 +10,7 @@ class Artiste(models.Model):
 
 
 	#specifying the tag for the artiste model.
-	#The "first_name" assigned to the input will 
+	#The value of "first_name" will 
 	#serve as the title for the entry.
 	def __str__(self):
 		return self.first_name
@@ -34,6 +34,6 @@ class Lyric(models.Model):
 
 
 	def __str__(self):
-		return self.content
+		return str(self.song_id)
 
 

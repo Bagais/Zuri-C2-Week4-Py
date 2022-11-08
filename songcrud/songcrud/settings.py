@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'musicapp',
+    #'musicapp',
+    'musicapp.apps.MusicappConfig',
     # 'musicapp.common.apps.CommonConfig'
     'rest_framework',
 ]
@@ -124,3 +125,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES":(
+        "rest_framework.authentication.SessionAuthentication",  # Default auth:stores cookies on user computer
+        "rest_framework.authentication.BasicAuthentication",    # Allows users pass their username and password for auth
+        "rest_framework.authentication.TokenAuthentication",
+
+    )
+}
