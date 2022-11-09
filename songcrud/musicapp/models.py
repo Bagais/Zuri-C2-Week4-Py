@@ -6,7 +6,7 @@ class Artiste(models.Model):
 	first_name = models.CharField(max_length=20)
 	last_name = models.CharField(max_length=20)
 	age = models.IntegerField()
-	# id = models.BigAutoField(primary_key=True)
+	id = models.BigAutoField(primary_key=True)
 
 
 	#specifying the tag for the artiste model.
