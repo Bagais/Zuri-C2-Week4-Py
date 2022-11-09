@@ -14,16 +14,22 @@ def index(request):
 
 #List all artistes
 
-def artistes_list(request):
-    artistes = Artiste.objects.all()
-    ArtisteSerializer(artistes, many=True)
-    return JsonResponse(serializer.data, safe=False)
+class ArtisteViewSet(viewsets.ModelViewSet):
+    queryset = Artiste.objects.all().order_by('first_name')
+    serializer_class = ArtisteSerializer
 
 
 #List all songs
 
-def songs_list(request):
-    songs = Songs.objects.all()
+class SongViewSet(viewsets.ModelViewSet):
+    queryset = Song.objects.all().order_by('title')
+    serializer_class = SongSerializer
+
+#List all lyrics
+
+class LyricViewSet(viewsets.ModelViewSet):
+    queryset = Lyric.objects.all().order_by('song_id')
+    serializer_class = LyricSerializer
 
 
 #fetch a particular song 
