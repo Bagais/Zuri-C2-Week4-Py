@@ -3,7 +3,10 @@ from . import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
-router.register(r'Artiste', views.ArtisteViewSet)
+router.register(r'All Artistes', views.ArtisteViewSet)
+router.register(r'All Songs', views.SongViewSet)
+router.register(r'All Lyrics', views.LyricViewSet)
+
 
 urlpatterns = [
 	# path('', views.index, name='index'),

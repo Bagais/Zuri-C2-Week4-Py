@@ -21,6 +21,15 @@ class ArtisteViewSet(viewsets.ModelViewSet):
 
 #List all songs
 
+class SongViewSet(viewsets.ModelViewSet):
+    queryset = Song.objects.all().order_by('title')
+    serializer_class = SongSerializer
+
+#List all lyrics
+
+class LyricViewSet(viewsets.ModelViewSet):
+    queryset = Lyric.objects.all().order_by('song_id')
+    serializer_class = LyricSerializer
 
 
 #fetch a particular song 
